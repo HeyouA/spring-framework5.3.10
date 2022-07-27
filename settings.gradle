@@ -54,3 +54,5 @@ settings.gradle.projectsLoaded {
 		}
 	}
 }
+include 'ruanyou-spring-framework-5.3.10'
+
