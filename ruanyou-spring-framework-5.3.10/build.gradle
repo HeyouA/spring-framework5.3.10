@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+}
+
+group 'org.springframework'
+version '5.3.10'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api(project(":spring-context"))
+    api(project(":spring-beans"))
+    api(project(":spring-core"))
+    api(project(":spring-aop"))
+    api("org.aspectj:aspectjweaver")
+    api("org.apache.commons:commons-pool2")
+    api("com.jamonapi:jamon")
+    testImplementation(testFixtures(project(":spring-beans")))
+    testImplementation(testFixtures(project(":spring-core")))
+    testFixturesImplementation(testFixtures(project(":spring-beans")))
+    testFixturesImplementation(testFixtures(project(":spring-core")))
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
